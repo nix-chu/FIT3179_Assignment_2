@@ -1,0 +1,132 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/usa.topojson",
+        "format": {
+            "type": "topojson",
+            "feature": "states"
+        }
+    },
+    "vconcat": [
+        {
+            "title": "Joe Biden 306                                                                    232 Donald Trump",
+            "width": 700,
+            "height": 18,
+            "data": {
+                "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/clean_candidate_data.csv"
+            },
+            "layer": [
+                {
+                    "mark": "bar",
+                    "encoding": {
+                        "x": {
+                            "field": "electoral_college_total",
+                            "stack": "normalize",
+                            "axis": {
+                                "title": "",
+                                "labels": false,
+                                "ticks": false
+                            }
+                        },
+                        "color": {
+                            "field": "candidate",
+                            "scale": { "range": ["red", "blue"] },
+                            "legend": null
+                        }
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "center"
+                    },
+                    "encoding": {
+                        "text": {
+                            "field": "electoral_college_total",
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "value": "white"
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "title": "",
+            "width": 700,
+            "height": 400,
+            "projection": { "type": "albersUsa" },
+            "transform": [
+                {
+                    "lookup": "properties.name",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/clean_candidate_data.csv"
+                        },
+                        "key": "state",
+                        "fields": [ "winner", "votes" ]
+                    }
+                }
+            ],
+            "layer": [
+                {
+                    "mark": {
+                        "type": "geoshape"
+                    },
+                    "encoding": {
+                        "color": {
+                            "condition": {
+                                "test": "datum['winner'] == 'Biden'",
+                                "value": "blue"
+                            },
+                            "value": "red"
+                        },
+                        "stroke": { "value": "firebrick" },
+                        "strokeWidth": { "value": 1 },
+                        "opacity": {
+                            "condition": {
+                                "param": "winner_highlight",
+                                "value": 1
+                            },
+                            "value": 0.2
+                        }
+                    },
+                    "params": [
+                        {
+                            "name": "winner_highlight",
+                            "select": {
+                                "type": "point",
+                                "on": "mouseover",
+                                "fields": [ "winner" ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/clean_candidate_data.csv"
+                    },
+                    "mark": {
+                        "type": "text",
+                        "color": "white"
+                    },
+                    "encoding": {
+                        "longitude": {
+                            "field": "lon",
+                            "type": "quantitative"
+                        },
+                        "latitude": {
+                            "field": "lat",
+                            "type": "quantitative"
+                        },
+                        "text": {
+                            "field": "votes",
+                            "type": "quantitative"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
