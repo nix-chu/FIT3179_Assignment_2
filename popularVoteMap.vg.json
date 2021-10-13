@@ -1,3 +1,59 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/totals.csv"
+    },
+    "width": 700,
+    "height": 100,
+    "layer": [
+        {
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "population_total",
+                    "type": "quantitative",
+                    "axis": { "title": "" }
+                },
+                "y": {
+                    "field": "candidate",
+                    "type": "nominal",
+                    "axis": {
+                        "title": "",
+                        "labelFontSize": 13,
+                        "labelFontWeight": "bold"
+                    }
+                }, 
+                "color": {
+                    "condition": {
+                        "test": "datum['candidate'] == 'Biden'",
+                        "value": "blue"
+                    },
+                    "value": "red"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "color": "white",
+                "dx": -35,
+                "fontSize": 13,
+                "fontWeight": "bold"
+            },
+            "encoding": {
+                "text": {
+                    "field": "population_total",
+                    "type": "quantitative"
+                },
+                "x": {
+                    "field": "population_total",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "candidate",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
 }
