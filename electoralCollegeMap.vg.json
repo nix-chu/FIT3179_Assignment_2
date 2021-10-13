@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "data": {
-        "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/usa.topojson",
+        "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/usa_states.topojson",
         "format": {
             "type": "topojson",
             "feature": "states"
@@ -11,46 +11,28 @@
         {
             "title": "Joe Biden 306                                                                    232 Donald Trump",
             "width": 700,
-            "height": 18,
+            "height":18,
             "data": {
-                "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/clean_candidate_data.csv"
+                "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/totals.csv"
             },
-            "layer": [
-                {
-                    "mark": "bar",
-                    "encoding": {
-                        "x": {
-                            "field": "electoral_college_total",
-                            "stack": "normalize",
-                            "axis": {
-                                "title": "",
-                                "labels": false,
-                                "ticks": false
-                            }
-                        },
-                        "color": {
-                            "field": "candidate",
-                            "scale": { "range": ["red", "blue"] },
-                            "legend": null
-                        }
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "electoral_college_total",
+                    "stack": "normalize",
+                    "aggregate": "sum",
+                    "axis": {
+                        "title": "",
+                        "labels": false,
+                        "ticks": false
                     }
                 },
-                {
-                    "mark": {
-                        "type": "text",
-                        "align": "center"
-                    },
-                    "encoding": {
-                        "text": {
-                            "field": "electoral_college_total",
-                            "type": "quantitative"
-                        },
-                        "color": {
-                            "value": "white"
-                        }
-                    }
+                "color": {
+                    "field": "candidate",
+                    "scale": { "range": [ "blue", "red" ] },
+                    "legend": null
                 }
-            ]
+            }
         },
         {
             "title": "",
