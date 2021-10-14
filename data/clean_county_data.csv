@@ -1,4 +1,4 @@
-state,county,biden_votes,trump_votes,other_votes,winner
+state,county,biden_votes,trump_votes,other_votes,county_winner
 Delaware,Kent,44552,41009,1464,Biden
 Delaware,New Castle,195034,88364,4235,Biden
 Delaware,Sussex,56682,71230,1440,Trump
