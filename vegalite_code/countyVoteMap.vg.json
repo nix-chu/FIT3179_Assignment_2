@@ -9,6 +9,32 @@
     },
     "vconcat": [
         {
+            "title": "Joe Biden 1406                                                                                                               3227 Donald Trump",
+            "width": 700,
+            "height": 18,
+            "data": {
+                "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/totals.csv"
+            },
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "county_total",
+                    "stack": "normalize",
+                    "aggregate": "sum",
+                    "axis": {
+                        "title": "",
+                        "labels": false,
+                        "ticks": false
+                    }
+                },
+                "color": {
+                    "field": "candidate",
+                    "scale": { "range": [ "blue", "red" ] },
+                    "legend": null
+                }
+            }
+        },
+        {
             "title": "",
             "width": 700,
             "height": 400,
@@ -21,21 +47,55 @@
                             "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/clean_county_data.csv"
                         },
                         "key": "county",
-                        "fields": [ "candidate", "won" ]
+                        "fields": [ "state", "county", "biden_votes", "trump_votes", "other_votes"]
                     }
+                },
+                {
+                    "calculate": "if(parseInt(datum['biden_votes']) > parseInt(datum['trump_votes']), 'Biden', 'Trump')",
+                    "as": "winner"
                 }
             ],
             "mark": { "type": "geoshape" },
             "encoding": {
                 "color": {
                     "condition": {
-                        "test": "(datum['candidate'] == 'Joe Biden') == datum['won']",
+                        "test": "datum['winner'] == 'Biden'",
                         "value": "blue"
-                    }
+                    },
+                    "value": "red"
                 },
-                "tooltip": {
-                    "field": ""
-                }
+                "tooltip": [
+                    {
+                        "field": "state",
+                        "type": "nominal",
+                        "title": "State"
+                    },
+                    {
+                        "field": "county",
+                        "type": "nominal",
+                        "title": "County"
+                    },
+                    {
+                        "field": "biden_votes",
+                        "type": "quantitative",
+                        "title": "Biden Votes"
+                    },
+                    {
+                        "field": "trump_votes",
+                        "type": "quantitative",
+                        "title": "Trump Votes"
+                    },
+                    {
+                        "field": "other_votes",
+                        "type": "quantitative",
+                        "title": "Other Votes"
+                    },
+                    {
+                        "field": "winner",
+                        "type": "nominal",
+                        "title": "Result"
+                    }
+                ]
             }
         }
     ]
