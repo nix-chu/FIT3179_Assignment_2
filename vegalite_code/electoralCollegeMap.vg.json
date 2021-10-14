@@ -53,9 +53,7 @@
             ],
             "layer": [
                 {
-                    "mark": {
-                        "type": "geoshape"
-                    },
+                    "mark": { "type": "geoshape" },
                     "encoding": {
                         "color": {
                             "condition": {

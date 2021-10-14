@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/usa_county.topojson",
+        "format": {
+            "type": "topojson",
+            "feature": "counties"
+        }
+    },
+    "vconcat": [
+        {
+            "title": "",
+            "width": 700,
+            "height": 400,
+            "projection": { "type": "albersUsa" },
+            "transform": [
+                {
+                    "lookup": "properties.name",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/president_county_candidate.csv"
+                        },
+                        "key": "county",
+                        "fields": [ "candidate", "won" ]
+                    }
+                }
+            ],
+            "mark": { "type": "geoshape" },
+            "encoding": {
+                "color": {
+                    "condition": {
+                        "test": "(datum['candidate'] == 'Joe Biden') == datum['won']",
+                        "value": "blue"
+                    }
+                },
+                "tooltip": {
+                    "field": ""
+                }
+            }
+        }
+    ]
+}
