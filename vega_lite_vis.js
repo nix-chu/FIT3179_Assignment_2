@@ -1,22 +1,22 @@
-let electoralCollegeMap = "electoralCollegeMap.vg.json";
+let electoralCollegeMap = "vegalite_code/electoralCollegeMap.vg.json";
 
 vegaEmbed("#electoralCollegeMap", electoralCollegeMap).then(function(result) {
 
 }).catch(console.error);
 
-let popularVoteMap = "popularVoteMap.vg.json";
+let popularVoteChart = "vegalite_code/popularVoteChart.vg.json";
 
-vegaEmbed("#popularVoteMap", popularVoteMap).then(function(result) {
+vegaEmbed("#popularVoteChart", popularVoteChart).then(function(result) {
 
 }).catch(console.error);
 
-let countyVoteMap = "countyVoteMap.vg.json";
+let countyVoteMap = "vegalite_code/countyVoteMap.vg.json";
 
 vegaEmbed("#countyVoteMap", countyVoteMap).then(function(result) {
 
 }).catch(console.error);
 
-let statePopulationMap = "statePopulationMap.vg.json";
+let statePopulationMap = "vegalite_code/statePopulationMap.vg.json";
 
 vegaEmbed("#statePopulationMap", statePopulationMap).then(function(result) {
 
