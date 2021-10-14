@@ -1,6 +1,6 @@
 import csv
 
-filelocation = "president_county_candidate.csv"
+filelocation = "data/president_county_candidate.csv"
 csv_file = open(filelocation, 'r')
 csv_reader = csv.reader(csv_file, delimiter=',')
 next(csv_reader, None) # skip header
@@ -29,7 +29,7 @@ for row in csv_reader:
         data[row[0]][row[1]][row[2]] = row[4]
 
 csv_file.close()
-f = open("clean_county_data.csv", 'w', newline="")
+f = open("data/clean_county_data.csv", 'w', newline="")
 csv_writer = csv.writer(f)
 header_row = ["state", "county", "biden_votes", "trump_votes", "other_votes", "winner"]
 csv_writer.writerow(header_row)
@@ -39,7 +39,7 @@ for state in data:
         # Determine county winner
         biden_votes = data[state][county]["Joe Biden"]
         trump_votes = data[state][county]["Donald Trump"]
-        if biden_votes > trump_votes:
+        if int(biden_votes) > int(trump_votes):
             winner = "Biden"
         else:
             winner = "Trump"
