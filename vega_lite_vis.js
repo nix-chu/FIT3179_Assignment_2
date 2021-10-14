@@ -16,6 +16,12 @@ vegaEmbed("#countyVoteMap", countyVoteMap).then(function(result) {
 
 }).catch(console.error);
 
+let countyDorlingCartogram = "vegalite_code/countyDorlingCartogram.vg.json";
+
+vegaEmbed("#countyDorlingCartogram", countyDorlingCartogram).then(function(result) {
+
+}).catch(console.error);
+
 let statePopulationMap = "vegalite_code/statePopulationMap.vg.json";
 
 vegaEmbed("#statePopulationMap", statePopulationMap).then(function(result) {
