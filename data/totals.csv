@@ -1,3 +1,3 @@
-﻿candidate,electoral_college_total,population_total
-Biden,306,82046434
-Trump,232,74585705
+﻿candidate,electoral_college_total,population_total,county_total
+Biden,306,82046434,1406
+Trump,232,74585705,3227
