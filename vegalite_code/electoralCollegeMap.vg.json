@@ -11,7 +11,7 @@
         {
             "title": "Joe Biden 306                                                                                                                 232 Donald Trump",
             "width": 700,
-            "height":18,
+            "height": 18,
             "data": {
                 "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/totals.csv"
             },
