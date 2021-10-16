@@ -4,7 +4,7 @@
         "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/totals.csv"
     },
     "title": "Joe Biden 1640.93                                                                                                    1491.71 Donald Trump",
-    "width": 700,
+    "width": 1200,
     "height": 18,
     "mark": "bar",
     "encoding": {

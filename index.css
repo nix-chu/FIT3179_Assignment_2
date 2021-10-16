@@ -1,4 +1,70 @@
 body {
     margin: auto;
     width: 80%;
+    font-family: Arial;
+}
+
+h1 {
+    text-align: center;
+}
+
+.float-container {
+    padding: 20px;
+}
+
+#electoralCollegeMap {
+    float: left;
+    width: 700px;
+    padding: 20px;
+}
+#electoralCollegeText {
+    float: right;
+    height: 470px;
+    width: 400px;
+    padding: 20px;
+}
+
+#popularVoteHeader {
+    padding-left: 385px;
+}
+#popularVoteChart {
+    float: left;
+    height: 100px;
+    width: 700px;
+}
+#popularVoteText {
+    float: right;
+    height: 100px;
+    width: 400px;
+}
+
+#addspace {
+    height: 50px;
+    width: 1200px;
+    padding: 70px;
+}
+
+#countyVoteMap {
+    float: left;
+    width: 700px;
+}
+#countyVoteText {
+    float: right;
+    height: 460px;
+    width: 400px;
+}
+
+#statePopulationText {
+    float: center;
+    height: 20px;
+}
+#statePopulationBar {
+    float: center;
+    height: 20px;
+    padding: 20px;
+}
+#statePopulationMap {
+    float: center;
+    height: 400px;
+    padding: 20px;
 }

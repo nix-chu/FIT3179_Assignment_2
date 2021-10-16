@@ -9,30 +9,46 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>Winning by Electoral Colleges</h1>
-    <div id="electoralCollegeMap"></div>
+    <h1 id="electoralCollegeHeader">Winning by Electoral Colleges</h1>
+    <div class=float-container>
+        <div id="electoralCollegeMap" class="left"></div>
+        <p id="electoralCollegeText" class="right">
+            The current system of the American presidential elections uses the Electoral College which delegates
+            points per state. If a candidate wins majority of voters in that state, all the state's points are
+            awarded to the candidate. 
+        </p>
+    </div>
 
-    <h1>Winning by popular vote</h1>
-    <div id="popularVoteChart"></div>
+    <h1 id="popularVoteHeader">Winning by popular vote</h1>
+    <div class=float-container>
+        <div id="popularVoteChart" class=float-child></div>
+        <p id="popularVoteText">Yes</p>
+    </div>
 
-    <h1>Winning by number of counties won</h1>
-    <div id="countyVoteMap"></div>
-    <p>
-        Although Trump has won the most counties and it seems like Trump has won by a landslide, but every
-        county has skewed populations. Los Angeles County in California has roughly 10 million people,
-        which is an incredible difference to Loving County in Texas with 169 people.
-    </p>
+    <div id="addspace"></div>
 
-    <h1>Winning by state population density</h1>
-    <p>
-        To estimate this, we will use Australia's voting system.
+    <h1 id="countyVoteHeader">Winning by number of counties won</h1>
+    <div class=float-container>
+        <div id="countyVoteMap" class="left"></div>
+        <p id="countyVoteText" class="right">
+            Although Trump has won the most counties and it seems like Trump has won by a landslide, but every
+            county has skewed populations. Los Angeles County in California has roughly 10 million people,
+            which is an incredible difference to Loving County in Texas with 169 people.
+        </p>
+    </div>
 
-        Each electorate/county represents 50,000 people and winning majority in an electorate/county awards
-        one point. Since USA's counties have skewed populations, then instead we will consider the entire
-        state's population and award points per 50,000 people.
-    </p>
-    <div id="statePopulationBar"></div>
-    <div id="statePopulationMap"></div>
+    <h1 id="statePopulationHeader">Winning by state population density</h1>
+    <div class=float-container>
+        <p id="statePopulationText">
+            To estimate this, we will use Australia's voting system.
+
+            Each electorate/county represents 50,000 people and winning majority in an electorate/county awards
+            one point. Since USA's counties have skewed populations, then instead we will consider the entire
+            state's population and award points per 50,000 people.
+        </p>
+        <div id="statePopulationBar" class="placeChartCentre"></div>
+        <div id="statePopulationMap" class="placeChartCentre"></div>
+    </div>
 
     <script src="vega_lite_vis.js"></script>
 </body>

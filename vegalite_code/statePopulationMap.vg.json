@@ -10,7 +10,7 @@
     "hconcat": [
         {
             "title": "Biden voters proportion",
-            "width": 500,
+            "width": 550,
             "height": 400,
             "projection": { "type": "albersUsa" },
             "transform": [
@@ -116,7 +116,7 @@
         },
         {
             "title": "Trump voters proportion",
-            "width": 500,
+            "width": 550,
             "height": 400,
             "projection": { "type": "albersUsa" },
             "transform": [
