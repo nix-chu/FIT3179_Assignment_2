@@ -23,8 +23,7 @@
                     "aggregate": "sum",
                     "axis": {
                         "title": "",
-                        "labels": false,
-                        "ticks": false
+                        "tickMinStep": 0.5
                     }
                 },
                 "color": {

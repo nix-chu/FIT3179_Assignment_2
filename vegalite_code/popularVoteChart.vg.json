@@ -3,57 +3,87 @@
     "data": {
         "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/totals.csv"
     },
-    "width": 700,
-    "height": 100,
-    "layer": [
+    "vconcat": [
         {
+            "title": "Joe Biden 82,046,434                                                                                           74,585,705 Donald Trump",
+            "width": 700,
+            "height": 18,
             "mark": "bar",
             "encoding": {
                 "x": {
                     "field": "population_total",
-                    "type": "quantitative",
-                    "axis": { "title": "" }
-                },
-                "y": {
-                    "field": "candidate",
-                    "type": "nominal",
+                    "stack": "normalize",
+                    "aggregate": "sum",
                     "axis": {
                         "title": "",
-                        "labelFontSize": 13,
-                        "labelFontWeight": "bold"
+                        "tickMinStep": 0.5
                     }
-                }, 
+                },
                 "color": {
-                    "condition": {
-                        "test": "datum['candidate'] == 'Biden'",
-                        "value": "#1405BD"
-                    },
-                    "value": "#DE0100"
+                    "field": "candidate",
+                    "scale": { "range": [ "#1405BD", "#DE0100" ] },
+                    "legend": null
                 }
             }
         },
         {
-            "mark": {
-                "type": "text",
-                "color": "white",
-                "dx": -35,
-                "fontSize": 13,
-                "fontWeight": "bold"
-            },
-            "encoding": {
-                "text": {
-                    "field": "population_total",
-                    "type": "quantitative"
+            "title": "",
+            "width": 700,
+            "height": 100,
+            "layer": [
+                {
+                    "mark": "bar",
+                    "encoding": {
+                        "x": {
+                            "field": "population_total",
+                            "type": "quantitative",
+                            "axis": {
+                                "title": "Votes",
+                                "tickMinStep": 20000000
+                            }
+                        },
+                        "y": {
+                            "field": "candidate",
+                            "type": "nominal",
+                            "axis": {
+                                "title": "",
+                                "labelFontSize": 13,
+                                "labelFontWeight": "bold"
+                            }
+                        }, 
+                        "color": {
+                            "condition": {
+                                "test": "datum['candidate'] == 'Biden'",
+                                "value": "#1405BD"
+                            },
+                            "value": "#DE0100"
+                        }
+                    }
                 },
-                "x": {
-                    "field": "population_total",
-                    "type": "quantitative"
-                },
-                "y": {
-                    "field": "candidate",
-                    "type": "nominal"
+                {
+                    "mark": {
+                        "type": "text",
+                        "color": "white",
+                        "dx": -35,
+                        "fontSize": 13,
+                        "fontWeight": "bold"
+                    },
+                    "encoding": {
+                        "text": {
+                            "field": "population_total",
+                            "type": "quantitative"
+                        },
+                        "x": {
+                            "field": "population_total",
+                            "type": "quantitative"
+                        },
+                        "y": {
+                            "field": "candidate",
+                            "type": "nominal"
+                        }
+                    }
                 }
-            }
+            ]
         }
     ]
 }
