@@ -46,7 +46,7 @@
                             "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/clean_candidate_data.csv"
                         },
                         "key": "state",
-                        "fields": [ "winner", "votes" ]
+                        "fields": [ "state", "winner", "votes" ]
                     }
                 }
             ],
@@ -71,7 +71,24 @@
                                 "value": 1
                             },
                             "value": 0.2
-                        }
+                        },
+                        "tooltip": [
+                            {
+                                "field": "state",
+                                "type": "nominal",
+                                "title": "State"
+                            },
+                            {
+                                "field": "votes",
+                                "type": "quantitative",
+                                "title": "Points"
+                            },
+                            {
+                                "field": "winner",
+                                "type": "nominal",
+                                "title": "Winner"
+                            }
+                        ]
                     },
                     "params": [
                         {

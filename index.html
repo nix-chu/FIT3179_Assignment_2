@@ -5,6 +5,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <h1>Winning by Electoral Colleges</h1>
@@ -29,6 +31,7 @@
         one point. Since USA's counties have skewed populations, then instead we will consider the entire
         state's population and award points per 50,000 people.
     </p>
+    <div id="statePopulationBar"></div>
     <div id="statePopulationMap"></div>
 
     <script src="vega_lite_vis.js"></script>

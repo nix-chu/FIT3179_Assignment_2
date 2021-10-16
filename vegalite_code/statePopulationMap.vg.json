@@ -1,3 +1,217 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/vegalite_code/usa_states.topojson",
+        "format": {
+            "type": "topojson",
+            "feature": "states"
+        }
+    },
+    "hconcat": [
+        {
+            "title": "Biden voters proportion",
+            "width": 500,
+            "height": 400,
+            "projection": { "type": "albersUsa" },
+            "transform": [
+                {
+                    "lookup": "properties.name",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/clean_candidate_data.csv"
+                        },
+                        "key": "state",
+                        "fields": [ "state", "biden_votes", "biden_per_50000", "population_per_50000", "population_over18" ]
+                    }
+                },
+                {
+                    "calculate": "datum['biden_per_50000']/datum['population_per_50000']",
+                    "as": "biden_proportion"
+                }
+            ],
+            "layer": [
+                {
+                    "mark": {
+                        "type": "geoshape",
+                        "stroke": "#191919"
+                    },
+                    "encoding": {
+                        "color": {
+                            "field": "biden_proportion",
+                            "type": "quantitative", 
+                            "scale": {
+                                "type": "linear",
+                                "range": [ "#f2f0f7", "#54278f" ]
+                            },
+                            "legend": {
+                                "title": ""
+                            }
+                        },
+                        "tooltip": [
+                            {
+                                "field": "state",
+                                "type": "nominal",
+                                "title": "State"
+                            },
+                            {
+                                "field": "biden_votes",
+                                "type": "quantitative",
+                                "title": "Biden Votes"
+                            },
+                            {
+                                "field": "population_over18",
+                                "type": "quantitative",
+                                "title": "Total Population"
+                            },
+                            {
+                                "field": "biden_per_50000",
+                                "type": "quantitative",
+                                "title": "Points Earned"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/clean_candidate_data.csv"
+                    },
+                    "mark": {
+                        "type": "text",
+                        "color": "black"
+                    },
+                    "encoding": {
+                        "longitude": {
+                            "field": "lon",
+                            "type": "quantitative"
+                        },
+                        "latitude": {
+                            "field": "lat",
+                            "type": "quantitative"
+                        },
+                        "text": {
+                            "field": "biden_per_50000",
+                            "type": "quantitative"
+                        },
+                        "opacity": {
+                            "condition": {
+                                "param": "mouse_hover",
+                                "empty": false,
+                                "value": 1
+                            },
+                            "value": 0
+                        }
+                    },
+                    "params": [
+                        {
+                            "name": "mouse_hover",
+                            "select": {
+                                "type": "point",
+                                "on": "mouseover",
+                                "fields": [ "biden_per_50000" ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Trump voters proportion",
+            "width": 500,
+            "height": 400,
+            "projection": { "type": "albersUsa" },
+            "transform": [
+                {
+                    "lookup": "properties.name",
+                    "from": {
+                        "data": {
+                            "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/clean_candidate_data.csv"
+                        },
+                        "key": "state",
+                        "fields": [ "state", "trump_votes", "trump_per_50000", "population_per_50000", "population_over18" ]
+                    }
+                },
+                {
+                    "calculate": "datum['trump_per_50000']/datum['population_per_50000']",
+                    "as": "trump_proportion"
+                }
+            ],
+            "layer": [
+                {
+                    "mark": {
+                        "type": "geoshape",
+                        "stroke": "#191919"
+                    },
+                    "encoding": {
+                        "color": {
+                            "field": "trump_proportion",
+                            "type": "quantitative"
+                        },
+                        "tooltip": [
+                            {
+                                "field": "state",
+                                "type": "nominal",
+                                "title": "State"
+                            },
+                            {
+                                "field": "trump_votes",
+                                "type": "quantitative",
+                                "title": "Trump Votes"
+                            },
+                            {
+                                "field": "population_over18",
+                                "type": "quantitative",
+                                "title": "Total Population"
+                            },
+                            {
+                                "field": "trump_per_50000",
+                                "type": "quantitative",
+                                "title": "Points Earned"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "data": {
+                        "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/clean_candidate_data.csv"
+                    },
+                    "mark": {
+                        "type": "text",
+                        "color": "black"
+                    },
+                    "encoding": {
+                        "longitude": {
+                            "field": "lon",
+                            "type": "quantitative"
+                        },
+                        "latitude": {
+                            "field": "lat",
+                            "type": "quantitative"
+                        },
+                        "text": {
+                            "field": "trump_per_50000",
+                            "type": "quantitative"
+                        },
+                        "opacity": {
+                            "condition": {
+                                "param": "mouse_hover",
+                                "empty": false,
+                                "value": 1
+                            },
+                            "value": 0
+                        }
+                    },
+                    "params": [
+                        {
+                            "name": "mouse_hover",
+                            "select": {
+                                "type": "point",
+                                "on": "mouseover",
+                                "fields": [ "biden_per_50000" ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

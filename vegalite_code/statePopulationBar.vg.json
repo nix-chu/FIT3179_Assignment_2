@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/totals.csv"
+    },
+    "title": "Joe Biden 1640.93                                                                                                    1491.71 Donald Trump",
+    "width": 700,
+    "height": 18,
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "state_pop_total",
+            "stack": "normalize",
+            "aggregate": "sum",
+            "axis": {
+                "title": "",
+                "tickMinStep": 0.5
+            }
+        },
+        "color": {
+            "field": "candidate",
+            "scale": { "range": [ "#1405BD", "#DE0100" ] },
+            "legend": null
+        }
+    }
+}
