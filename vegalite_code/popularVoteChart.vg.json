@@ -26,9 +26,9 @@
                 "color": {
                     "condition": {
                         "test": "datum['candidate'] == 'Biden'",
-                        "value": "blue"
+                        "value": "#1405BD"
                     },
-                    "value": "red"
+                    "value": "#DE0100"
                 }
             }
         },

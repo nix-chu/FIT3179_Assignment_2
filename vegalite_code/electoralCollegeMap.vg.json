@@ -29,7 +29,7 @@
                 },
                 "color": {
                     "field": "candidate",
-                    "scale": { "range": [ "blue", "red" ] },
+                    "scale": { "range": [ "#1405BD", "#DE0100" ] },
                     "legend": null
                 }
             }
@@ -53,16 +53,18 @@
             ],
             "layer": [
                 {
-                    "mark": { "type": "geoshape" },
+                    "mark": {
+                        "type": "geoshape",
+                        "stroke": "#191919"
+                    },
                     "encoding": {
                         "color": {
                             "condition": {
                                 "test": "datum['winner'] == 'Biden'",
-                                "value": "blue"
+                                "value": "#1405BD"
                             },
-                            "value": "red"
+                            "value": "#DE0100"
                         },
-                        "stroke": { "value": "firebrick" },
                         "strokeWidth": { "value": 1 },
                         "opacity": {
                             "condition": {
