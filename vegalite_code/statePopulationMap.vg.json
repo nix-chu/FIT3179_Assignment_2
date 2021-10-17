@@ -21,7 +21,7 @@
                             "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/clean_candidate_data.csv"
                         },
                         "key": "state",
-                        "fields": [ "state", "biden_votes", "biden_per_50000", "population_per_50000", "population" ]
+                        "fields": [ "state", "biden_votes", "biden_per_50000", "population_per_50000" ]
                     }
                 },
                 {
@@ -57,11 +57,6 @@
                                 "field": "biden_votes",
                                 "type": "quantitative",
                                 "title": "Biden Votes"
-                            },
-                            {
-                                "field": "population",
-                                "type": "quantitative",
-                                "title": "Total Population"
                             },
                             {
                                 "field": "biden_per_50000",
@@ -127,7 +122,7 @@
                             "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/clean_candidate_data.csv"
                         },
                         "key": "state",
-                        "fields": [ "state", "trump_votes", "trump_per_50000", "population_per_50000", "population_over18" ]
+                        "fields": [ "state", "trump_votes", "trump_per_50000", "population_per_50000" ]
                     }
                 },
                 {
@@ -156,11 +151,6 @@
                                 "field": "trump_votes",
                                 "type": "quantitative",
                                 "title": "Trump Votes"
-                            },
-                            {
-                                "field": "population_over18",
-                                "type": "quantitative",
-                                "title": "Total Population"
                             },
                             {
                                 "field": "trump_per_50000",
