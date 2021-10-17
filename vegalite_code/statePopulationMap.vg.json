@@ -11,7 +11,7 @@
         {
             "title": "Biden voters proportion",
             "width": 550,
-            "height": 400,
+            "height": 330,
             "projection": { "type": "albersUsa" },
             "transform": [
                 {
@@ -21,7 +21,7 @@
                             "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/clean_candidate_data.csv"
                         },
                         "key": "state",
-                        "fields": [ "state", "biden_votes", "biden_per_50000", "population_per_50000", "population_over18" ]
+                        "fields": [ "state", "biden_votes", "biden_per_50000", "population_per_50000", "population" ]
                     }
                 },
                 {
@@ -59,7 +59,7 @@
                                 "title": "Biden Votes"
                             },
                             {
-                                "field": "population_over18",
+                                "field": "population",
                                 "type": "quantitative",
                                 "title": "Total Population"
                             },
@@ -117,7 +117,7 @@
         {
             "title": "Trump voters proportion",
             "width": 550,
-            "height": 400,
+            "height": 330,
             "projection": { "type": "albersUsa" },
             "transform": [
                 {

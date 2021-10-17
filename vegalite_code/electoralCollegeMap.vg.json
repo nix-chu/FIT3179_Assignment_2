@@ -46,7 +46,7 @@
                             "url": "https://raw.githubusercontent.com/nix-chu/FIT3179_Assignment_2/main/data/clean_candidate_data.csv"
                         },
                         "key": "state",
-                        "fields": [ "state", "winner", "votes" ]
+                        "fields": [ "state", "winner", "votes", "biden_votes", "trump_votes" ]
                     }
                 }
             ],
@@ -87,6 +87,16 @@
                                 "field": "winner",
                                 "type": "nominal",
                                 "title": "Winner"
+                            },
+                            {
+                                "field": "biden_votes",
+                                "type": "quantitative",
+                                "title": "Biden Votes"
+                            },
+                            {
+                                "field": "trump_votes",
+                                "type": "quantitative",
+                                "title": "Trump Votes"
                             }
                         ]
                     },

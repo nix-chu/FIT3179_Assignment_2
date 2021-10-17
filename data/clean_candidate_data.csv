@@ -1,4 +1,4 @@
-state,lat,lon,votes,biden_votes,trump_votes,population_over18,biden_per_50000,trump_per_50000,population_per_50000,winner
+state,lat,lon,votes,biden_votes,trump_votes,population,biden_per_50000,trump_per_50000,population_per_50000,winner
 Alabama,32.318231,-86.902298,9,849648,1441168,"3,814,879",16.99,28.82,45.81,Trump
 Alaska,63.588753,-154.493062,3,153405,189892,"551,562",3.07,3.8,6.87,Trump
 Arizona,34.048928,-111.093731,11,1672143,1661686,"5,638,481",33.44,33.23,66.67,Biden
