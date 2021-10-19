@@ -81,3 +81,12 @@ h1 {
     height: 400px;
     padding: 20px;
 }
+
+.trump {
+    color: #DE0100;
+    font-weight: bold;
+}
+.biden {
+    color: #1405BD;
+    font-weight: bold;
+}
